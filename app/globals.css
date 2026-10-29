@@ -1,0 +1,224 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  --navy: #1c2f54;
+  --navy-deep: #14233f;
+  --gold: #edc66f;
+  --bronze: #bf9e73;
+  --bronze-ink: #8a6b3f;
+  --paper: #f8f7f4;
+  --ink: #1f2328;
+  --muted: #5b6270;
+  --muted-on-navy: #9fb0cc;
+  --hairline: rgb(31 35 40 / 0.14);
+  --hairline-navy: rgb(237 198 111 / 0.18);
+
+  --container: 75rem;
+  --header-h: 4.5rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* shadcn behaviour layer reads these; mapped to the brand */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --muted-foreground: var(--muted);
+  --border: var(--hairline);
+  --ring: var(--gold);
+  --radius: 0.125rem;
+}
+
+/* Surfaces: sections set data-surface and everything inside follows. Layered so utilities can override. */
+@layer base {
+  [data-surface="paper"] {
+    --fg: var(--ink);
+    --fg-muted: var(--muted);
+    --line: var(--hairline);
+    --eyebrow: var(--bronze-ink);
+    --btn-bg: var(--navy);
+    --btn-fg: var(--paper);
+    --surface: var(--paper);
+    background: var(--surface);
+    color: var(--fg);
+  }
+  [data-surface="navy"] {
+    --fg: var(--paper);
+    --fg-muted: var(--muted-on-navy);
+    --line: var(--hairline-navy);
+    --eyebrow: var(--bronze);
+    --btn-bg: var(--gold);
+    --btn-fg: var(--navy);
+    --surface: var(--navy);
+    background: var(--surface);
+    color: var(--fg);
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-jost), system-ui, sans-serif;
+  --font-heading: var(--font-jost), system-ui, sans-serif;
+
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-gold: var(--gold);
+  --color-bronze: var(--bronze);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-line: var(--line);
+  --color-eyebrow: var(--eyebrow);
+  --color-surface: var(--surface);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+}
+
+@layer base {
+  * {
+    border-color: var(--line, var(--hairline));
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-jost), system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  [data-surface="paper"] :focus-visible {
+    outline-color: var(--navy);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Type roles (Compact scale, TY-3). Defined once, reused everywhere. */
+@layer components {
+  .t-h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    font-size: clamp(2.25rem, 1.2rem + 4.2vw, 4rem);
+    text-wrap: balance;
+  }
+  .t-h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
+    font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+    text-wrap: balance;
+  }
+  .t-card {
+    font-weight: 600;
+    line-height: 1.25;
+    font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  }
+  .t-body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .t-caption {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  .t-eyebrow {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    color: var(--eyebrow);
+  }
+
+  .section-pad {
+    padding-block: 3rem;
+  }
+  @media (min-width: 768px) {
+    .section-pad {
+      padding-block: 4rem;
+    }
+  }
+
+  .container-x {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    transition: transform 200ms var(--ease-out);
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  .btn svg {
+    transition: transform 200ms var(--ease-out);
+  }
+  .btn:hover svg {
+    transform: translateX(3px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--fg);
+    border-color: var(--fg);
+  }
+
+  .hairline-card {
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--surface);
+  }
+}
+
+/* Hero portal (MO-4). Default is the closed state; reduced motion shows the opened state. */
+.hero-panel {
+  background: var(--navy);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel,
+  .hero-dot {
+    display: none;
+  }
+  .hero-shell {
+    height: 100svh !important;
+  }
+}

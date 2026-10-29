@@ -1,0 +1,151 @@
+{
+  "card": {
+    "sections": 11,
+    "withRole": 11,
+    "distinctRoles": 8,
+    "distinctRecipes": 9,
+    "neighbourSameRole": [],
+    "recipeUsedOver2": [],
+    "noMedia": [
+      "Aarambh in numbers (proof-wall)",
+      "What our clients say (people)",
+      "faqs (statement)",
+      "contact (split)"
+    ],
+    "missingRoleOrRecipe": []
+  },
+  "findings": [
+    {
+      "width": 375,
+      "section": "top",
+      "kind": "overlap@start",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 375,
+      "section": "top",
+      "kind": "overlap@start",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 375,
+      "section": "top",
+      "kind": "overlap@mid",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 375,
+      "section": "top",
+      "kind": "overlap@mid",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 375,
+      "section": "top",
+      "kind": "overlap@end",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 375,
+      "section": "top",
+      "kind": "overlap@end",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 375,
+      "section": "The people you will deal with",
+      "kind": "overlap@start",
+      "detail": "p \"Site execution, structural q\" overlaps media"
+    },
+    {
+      "width": 768,
+      "section": "top",
+      "kind": "overlap@start",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 768,
+      "section": "top",
+      "kind": "overlap@start",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 768,
+      "section": "top",
+      "kind": "overlap@mid",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 768,
+      "section": "top",
+      "kind": "overlap@mid",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 768,
+      "section": "top",
+      "kind": "overlap@end",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 768,
+      "section": "top",
+      "kind": "overlap@end",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "top",
+      "kind": "overlap@start",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "top",
+      "kind": "overlap@start",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "top",
+      "kind": "overlap@mid",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "top",
+      "kind": "overlap@mid",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "top",
+      "kind": "overlap@end",
+      "detail": "h1 \"Your Dream. Our Blueprint.\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "top",
+      "kind": "overlap@end",
+      "detail": "p \"Building Foundations of Trus\" overlaps media"
+    },
+    {
+      "width": 1440,
+      "section": "Aarambh in numbers",
+      "kind": "no-media",
+      "detail": "Section has no image, video or built visual and is not role=statement"
+    },
+    {
+      "width": 1440,
+      "section": "What our clients say",
+      "kind": "no-media",
+      "detail": "Section has no image, video or built visual and is not role=statement"
+    },
+    {
+      "width": 1440,
+      "section": "contact",
+      "kind": "no-media",
+      "detail": "Section has no image, video or built visual and is not role=statement"
+    }
+  ]
+}
